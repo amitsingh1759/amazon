@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud & DevOps Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Cloud/DevOps Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-cloud"></i> DevOps.Core</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#projects">Architecture</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button class="join-btn-nav" id="openModalBtn">Join Us</button></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero-section">
+        <div class="hero-container">
+            <!-- Profile Photo Container -->
+            <div class="profile-container">
+                <div class="profile-frame">
+                    <!-- Replace the src URL with your actual image file -->
+                    <img src="profile.jpeg" alt="Alex Profile" class="profile-img">
+                    <div class="status-indicator"></div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Amit Singh</span></h1>
+                <h2>Cloud & DevOps Engineer</h2>
+                <p>Automating infrastructure, optimizing CI/CD pipelines, and architecting scalable cloud solutions.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">View Infrastructure</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>System Status: Active</h2>
+        <div class="about-container">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">about_me.yaml</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="t-key">engineer:</span> "Amit Singh"</p>
+                    <p><span class="t-key">mission:</span> "Bridge the gap between development and operations by treating infrastructure as code."</p>
+                    <p><span class="t-key">focus_areas:</span></p>
+                    <p class="t-indent">- High Availability (HA)</p>
+                    <p class="t-indent">- Zero-Downtime Deployments</p>
+                    <p class="t-indent">- Cloud Cost Optimization</p>
+                    <p><span class="t-key">experience:</span> "1 Years scaling cloud infrastructure."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Infrastructure Gallery -->
+    <section id="gallery" class="gallery-section">
+        <h2>Infrastructure & Environment Gallery</h2>
+        <p class="section-subtitle">Click an environment to inspect the structural blueprint</p>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-title="Production Kubernetes Cluster" data-desc="Fully isolated multi-tenant EKS structure running production microservices.">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="K8s Diagram">
+                <div class="gallery-overlay"><span>Inspect Cluster Blueprint</span></div>
+            </div>
+            <div class="gallery-item" data-title="CI/CD GitOps Pipeline" data-desc="Automated testing and deployment pipeline utilizing GitHub Actions and ArgoCD.">
+                <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=600&q=80" alt="Pipeline Diagram">
+                <div class="gallery-overlay"><span>Inspect Pipeline</span></div>
+            </div>
+            <div class="gallery-item" data-title="Global VPC Networking" data-desc="Highly secure multi-region AWS VPC setup with private subnets and custom NAT Gateways.">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="Network Diagram">
+                <div class="gallery-overlay"><span>Inspect Network Topography</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Enlarged View">
+            <div class="lightbox-caption">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2>Deployed Infrastructure Projects</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="aws">AWS</button>
+            <button class="filter-btn" data-filter="k8s">Kubernetes</button>
+            <button class="filter-btn" data-filter="iac">IaC</button>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card" data-category="k8s">
+                <div class="project-tags"><span>Kubernetes</span><span>Docker</span></div>
+                <h3>Multi-Region EKS Deployment</h3>
+                <p>Architected a highly available, fault-tolerant microservices cluster across multiple AWS regions with automated failover.</p>
+            </div>
+            <div class="project-card" data-category="aws">
+                <div class="project-tags"><span>AWS</span><span>Serverless</span></div>
+                <h3>Serverless Data Pipeline</h3>
+                <p>Built an automated data ingestion system utilizing AWS Lambda, S3, and DynamoDB, cutting operational costs by 40%.</p>
+            </div>
+            <div class="project-card" data-category="iac">
+                <div class="project-tags"><span>Terraform</span><span>Ansible</span></div>
+                <h3>GitOps Infrastructure as Code</h3>
+                <p>Fully automated the provisioning and configuration of staging and production environments using Terraform and GitHub Actions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Establish Connection</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Name/Organization" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <textarea id="message" rows="5" placeholder="Project details or collaboration proposal..." required></textarea>
+            <button type="submit" class="btn primary-btn">Ping Server (Send)</button>
+        </form>
+        <div id="form-response"></div>
+    </section>
+
+    <!-- Join Us Modal Popup -->
+    <div id="joinModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-terminal"></i> Join the Network</h3>
+            <p>Connect with me across social networks or initialize a secure engineering handshake below.</p>
+            
+            <div class="modal-socials">
+                <a href="https://www.linkedin.com/in/amit-singh-980b082a7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link linkedin" title="Connect on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/amitsinghpropergamming?igsh=MWtjNnBxajF6aXI1Mw==" target="_blank" class="social-link instagram" title="Follow on Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" target="_blank" class="social-link facebook" title="Connect on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+            </div>
+
+            <div class="modal-divider"><span>OR</span></div>
+
+            <form class="modal-form">
+                <input type="text" placeholder="Your Tech Stack (e.g., AWS, Kubernetes)" required>
+                <input type="email" placeholder="Your Engineering Email" required>
+                <button type="submit" class="btn primary-btn">Request Cluster Access</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Amit Singh. Engineered with uptime in mind.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
